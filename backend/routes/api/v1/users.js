@@ -57,7 +57,7 @@ router.post("/sign-up", asyncHandler(async(req, res) => {
     const accessToken = generateAccessToken({username, email, firstName, lastName, _id:newUser._id})
     const refreshToken = generateRefreshToken({username, email, firstName, lastName, _id:newUser._id})
     await User.updateOne({username},{refreshToken})
-    return res.json({accessToken, refreshToken, loggedInUser:{username, email, firstName, lastName}})
+    return res.json({accessToken, refreshToken, loggedInUser:{username, email, firstName, lastName,  _id:newUser._id}})
 }))
 
 //* Username or Email and Password Login

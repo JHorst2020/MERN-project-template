@@ -99,6 +99,9 @@ const SignUpPage = () => {
             errorMessageObj.email = createNewUser.email.errorMessage
         }
         setErrorMessage(errorMessageObj)
+        if(Object.keys(errorMessageObj).length === 0){
+            history.push("/")
+        }
         return
     }
 

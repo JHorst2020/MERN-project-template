@@ -34,9 +34,9 @@ const AppRoutes = () => {
                 <Switch>
                     {
                         loggedInUser?._id ? 
-                        <Route path="/sign-up" component={SignUpPage} />
+                        <Route path="/sign-up" component={HomePage} />
                         :
-                        <Route path="/sign-up" component={LoginPage} />
+                        <Route path="/sign-up" component={SignUpPage} />
                     }
                     {
                         loggedInUser?._id ? 

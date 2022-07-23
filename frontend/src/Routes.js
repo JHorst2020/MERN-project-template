@@ -14,8 +14,12 @@ const AppRoutes = () => {
     const loggedInUser = useSelector(state => state.user)
     const [isLoaded, setIsLoaded] = useState(false)
     const initialLoad = async() => {
-        await dispatch(restoreUser())
-        setIsLoaded(true)
+        try{
+            await dispatch(restoreUser())
+            setIsLoaded(true)
+        }catch(e){
+            setIsLoaded(true)
+        }
         
     }
     useEffect(()=>{
